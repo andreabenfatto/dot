@@ -51,7 +51,7 @@ main = do
   spawn "xscreensaver"
   spawn "$HOME/.screenlayout/autorandr.sh"
   xmonad $ baseConfig {
-      terminal = "xfce4-terminal"
+      terminal = "terminator"
       ,modMask = myModMask
       ,logHook = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc
