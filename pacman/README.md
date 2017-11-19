@@ -2,7 +2,7 @@
 
 In the directory there is an export of the explicit installed packages [archlinux-packages.txt](archlinux-packages.txt).
 
-Here the commands to export the list of packages and to eventually reinstall them which I found (here)[https://bbs.archlinux.org/viewtopic.php?pid=735455#p735455].
+Here the commands to export the list of packages and to eventually reinstall them which I found [here](https://bbs.archlinux.org/viewtopic.php?pid=735455#p735455).
 
 ```
 # put all explicitly installed packages (minus AUR) into a file
