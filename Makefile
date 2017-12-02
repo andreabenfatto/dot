@@ -13,6 +13,7 @@ install-ssh:	# SSH Agent setup
 	echo "Setting up SSH Agent service"
 	mkdir -p ~/.config/systemd/user/
 	ln -s $(PWD)/ssh-agent/ssh-agent.service ~/.config/systemd/user/ssh-agent.service
+	ln -s $(PWD)/ssh-agent/.pan_environment ~/.pam_environment
 	systemctl --user enable ssh-agent.service
 	systemctl --user start ssh-agent.service
 
@@ -32,6 +33,7 @@ clean-ssh:
 	-systemctl --user stop ssh-agent.service
 	-systemctl --user disable ssh-agent.service
 	-rm ~/.config/systemd/user/ssh-agent.service
+	-rm ~/.pam_environment
 
 clean-fish:
 	omf destroy
