@@ -157,3 +157,8 @@ bindsym $mod+r mode "resize"
 
 # Use polybar instead i3status
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+exec chromium
+exec emacs
+exec slack
+exec dunst
