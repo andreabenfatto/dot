@@ -9,6 +9,12 @@ install:
 	echo "Setting up Redshit ..."
 	ln -s $(PWD)/X11/redshift.conf ~/.config/redshift.conf
 	
+	echo "Setting up Polybar ..."
+	mkdir ~/.config/polybar
+	ln -s $(PWD)/polybar/config ~/.config/polybar/config
+	ln -s $(PWD)/polybar/launch.sh ~/.config/polybar/launch.sh
+
+	
 install-ssh:	# SSH Agent setup
 	echo "Setting up SSH Agent service"
 	mkdir -p ~/.config/systemd/user/
@@ -27,6 +33,8 @@ clean:
 	rm ~/.xinitrc
 	rm ~/.Xresources
 	rm ~/.config/redshift.conf
+	rm ~/.config/polybar/config
+	rm ~/.config/polybar/launch.sh
 
 clean-ssh:
 	echo "Removing SSH Agent service"
