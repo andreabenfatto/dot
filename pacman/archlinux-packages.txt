@@ -1,5 +1,6 @@
 adobe-source-code-pro-fonts
 alsa-utils
+arandr
 autoconf
 automake
 bash
@@ -7,8 +8,6 @@ binutils
 bison
 bzip2
 chromium
-compton
-compton-conf-git
 connman
 coreutils
 cryptsetup
@@ -16,6 +15,7 @@ device-mapper
 dhcpcd
 diffutils
 dmenu
+dunst
 e2fsprogs
 emacs
 fakeroot
@@ -48,6 +48,7 @@ less
 libtool
 licenses
 linux
+linux-headers
 logrotate
 lvm2
 m4
@@ -71,6 +72,7 @@ psmisc
 redshift
 reiserfsprogs
 s-nail
+scrot
 sed
 shadow
 slack-desktop
@@ -80,6 +82,7 @@ systemd-sysvcompat
 tar
 terminator
 texinfo
+the_silver_searcher
 transset-df
 ttf-croscore
 ttf-dejavu

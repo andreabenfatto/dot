@@ -1,6 +1,12 @@
+package-list-gen:
+	pacman -Qqe | grep -Fvx "$(pacman -Qqm)" > $(PWD)/pacman/archlinux-packages.txt
+
+package-list-install:
+	-xargs pacman -S --needed --noconfirm < pacman/archlinux-packages.txt
+	@echo "Verify which packages require the manual installation from AUR"
+
 install:
 	echo "installing deps"
-	sudo pacman -S redshift
 	
 	echo "Setting up X11 ..."
 	touch ~/.Xresources # at the moment the file is empty
@@ -16,8 +22,11 @@ install:
 	
 	echo "Setting up i3 ..."
 	ln -s $(PWD)/i3/config ~/.config/i3/config
-
 	
+	echo "Setting up wallpaper ..."
+	mkdir -p ~/pictures
+	ln -s $(PWD)/wallpapers/wallpaper.jpg ~/pictures/wallpaper.jpg	
+
 install-ssh:	# SSH Agent setup
 	echo "Setting up SSH Agent service"
 	mkdir -p ~/.config/systemd/user/
@@ -33,12 +42,14 @@ install-fish:
 	omf install bobthefish
 
 clean:
-	rm ~/.xinitrc
-	rm ~/.Xresources
-	rm ~/.config/redshift.conf
-	rm ~/.config/polybar/config
-	rm ~/.config/polybar/launch.sh
-	rm ~/.config/i3/config
+	echo "Cleaning up ..."
+	-rm ~/.xinitrc
+	-rm ~/.Xresources
+	-rm ~/.config/redshift.conf
+	-rm ~/.config/polybar/config
+	-rm ~/.config/polybar/launch.sh
+	-rm ~/.config/i3/config
+	-rm ~/pictures/wallpaper.jpg
 
 clean-ssh:
 	echo "Removing SSH Agent service"
