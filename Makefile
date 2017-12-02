@@ -35,13 +35,14 @@ install-fish:
 	omf install bobthefish
 
 clean:
-	rm ~/.xinitrc
-	rm ~/.Xresources
-	rm ~/.config/redshift.conf
-	rm ~/.config/polybar/config
-	rm ~/.config/polybar/launch.sh
-	rm ~/.config/i3/config
-	rm ~/pictures/wallpaper.jpg
+	echo "Cleaning up ..."
+	-rm ~/.xinitrc
+	-rm ~/.Xresources
+	-rm ~/.config/redshift.conf
+	-rm ~/.config/polybar/config
+	-rm ~/.config/polybar/launch.sh
+	-rm ~/.config/i3/config
+	-rm ~/pictures/wallpaper.jpg
 
 clean-ssh:
 	echo "Removing SSH Agent service"
