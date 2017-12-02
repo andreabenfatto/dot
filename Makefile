@@ -10,9 +10,12 @@ install:
 	ln -s $(PWD)/X11/redshift.conf ~/.config/redshift.conf
 	
 	echo "Setting up Polybar ..."
-	mkdir ~/.config/polybar
+	mkdir -p ~/.config/polybar
 	ln -s $(PWD)/polybar/config ~/.config/polybar/config
 	ln -s $(PWD)/polybar/launch.sh ~/.config/polybar/launch.sh
+	
+	echo "Setting up i3 ..."
+	ln -s $(PWD)/i3/config ~/.config/i3/config
 
 	
 install-ssh:	# SSH Agent setup
@@ -35,6 +38,7 @@ clean:
 	rm ~/.config/redshift.conf
 	rm ~/.config/polybar/config
 	rm ~/.config/polybar/launch.sh
+	rm ~/.config/i3/config
 
 clean-ssh:
 	echo "Removing SSH Agent service"
