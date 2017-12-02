@@ -3,6 +3,7 @@ install:
 	sudo pacman -S redshift
 	
 	echo "Setting up X11 ..."
+	touch ~/.Xresources # at the moment the file is empty
 	ln -s $(PWD)/X11/.xinitrc ~/.xinitrc
 	
 	echo "Setting up Redshit ..."
@@ -10,4 +11,5 @@ install:
 
 clean:
 	rm ~/.xinitrc
+	rm ~/.Xresources
 	rm ~/.config/redshift.conf
