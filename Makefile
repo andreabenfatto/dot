@@ -1,6 +1,5 @@
 install:
 	echo "installing deps"
-	sudo pacman -S redshift
 	
 	echo "Setting up X11 ..."
 	touch ~/.Xresources # at the moment the file is empty
