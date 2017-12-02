@@ -16,8 +16,11 @@ install:
 	
 	echo "Setting up i3 ..."
 	ln -s $(PWD)/i3/config ~/.config/i3/config
-
 	
+	echo "Setting up wallpaper ..."
+	mkdir -p ~/pictures
+	ln -s $(PWD)/wallpapers/wallpaper.jpg ~/pictures/wallpaper.jpg	
+
 install-ssh:	# SSH Agent setup
 	echo "Setting up SSH Agent service"
 	mkdir -p ~/.config/systemd/user/
@@ -39,6 +42,7 @@ clean:
 	rm ~/.config/polybar/config
 	rm ~/.config/polybar/launch.sh
 	rm ~/.config/i3/config
+	rm ~/pictures/wallpaper.jpg
 
 clean-ssh:
 	echo "Removing SSH Agent service"
