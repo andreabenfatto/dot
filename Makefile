@@ -16,6 +16,12 @@ install-ssh:	# SSH Agent setup
 	systemctl --user enable ssh-agent.service
 	systemctl --user start ssh-agent.service
 
+install-fish:
+	echo "Setting up Fish ..."
+	curl -L https://get.oh-my.fish | fish
+	ln -s $(PWD)/fish/config.fish ~/.config/fish/config.fish
+	omf install bobthefish
+
 clean:
 	rm ~/.xinitrc
 	rm ~/.Xresources
@@ -26,3 +32,7 @@ clean-ssh:
 	-systemctl --user stop ssh-agent.service
 	-systemctl --user disable ssh-agent.service
 	-rm ~/.config/systemd/user/ssh-agent.service
+
+clean-fish:
+	omf destroy
+	-rm ~/.config/fish/config.fish
