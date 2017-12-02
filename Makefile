@@ -1,3 +1,10 @@
+package-list-gen:
+	pacman -Qqe | grep -Fvx "$(pacman -Qqm)" > $(PWD)/pacman/archlinux-packages.txt
+
+package-list-install:
+	-xargs pacman -S --needed --noconfirm < pacman/archlinux-packages.txt
+	@echo "Verify which packages require the manual installation from AUR"
+
 install:
 	echo "installing deps"
 	
