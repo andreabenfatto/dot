@@ -31,7 +31,7 @@ install-ssh:	# SSH Agent setup
 	echo "Setting up SSH Agent service"
 	mkdir -p ~/.config/systemd/user/
 	ln -s $(PWD)/ssh-agent/ssh-agent.service ~/.config/systemd/user/ssh-agent.service
-	ln -s $(PWD)/ssh-agent/.pan_environment ~/.pam_environment
+	ln -s $(PWD)/ssh-agent/.pam_environment ~/.pam_environment
 	systemctl --user enable ssh-agent.service
 	systemctl --user start ssh-agent.service
 
